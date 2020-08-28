@@ -3,3 +3,16 @@ h1 {
   color: white;
   text-align: center;
 }
+
+table {
+  border-collapse: collapse;
+}
+
+table,
+td {
+  border: 1px solid black;
+}
+
+.tableHeader {
+  font-weight: 800;
+}
