@@ -29,7 +29,7 @@ function addEmployee() {
 function checkMonthlyTotal() {
   let el = Number($("#totalMonthly").text());
   if (el >= maxMonthlySalary) {
-    $("#totalMonthly").css("background-color", "red");
+    $("#redToggleArea").css("background-color", "red");
   } else {
     console.log("You have not reached the total monthly salary limit!");
   }
