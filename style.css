@@ -14,5 +14,9 @@ td {
 }
 
 .tableHeader {
-  font-weight: 800;
+  font-size: 20px;
+}
+
+.salaryTooHigh {
+  background: red;
 }
