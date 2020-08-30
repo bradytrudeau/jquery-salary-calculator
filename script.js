@@ -16,6 +16,11 @@ function addEmployee() {
   //Push newEmployee parameters into table
   console.log("New Employee:", newEmployee);
   employeeArray.push(newEmployee);
+  $("#firstNameIn").val("");
+  $("#lastNameIn").val("");
+  $("#idIn").val("");
+  $("#titleIn").val("");
+  $("#annualSalaryIn").val("");
   console.log("Employee List:", employeeArray);
   //Display employees in table
   displayEmployees();
@@ -42,7 +47,7 @@ function displayEmployees() {
       <td>${employeeArray[i].id}</td>
       <td>${employeeArray[i].title}</td>
       <td>$${employeeArray[i].annualSalary}</td>
-      <td><button class="removeBtn">Delete</button></td></tr>`
+      <td><button class="removeBtn">Delete Row</button></td></tr>`
     );
   }
   totalMonthlySalary();
