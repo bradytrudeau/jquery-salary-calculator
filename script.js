@@ -1,6 +1,7 @@
 $(document).ready(onReady);
 
 let employeeArray = [];
+const maxMonthlySalary = 20000;
 
 function addEmployee() {
   console.log("in addEmployee");
@@ -20,6 +21,15 @@ function addEmployee() {
   displayEmployees();
 }
 
+function checkMonthlyTotal() {
+  let el = Number($("#totalMonthly").text());
+  if (el >= maxMonthlySalary) {
+    $("#totalMonthly").css("background-color", "red");
+  } else {
+    console.log("You have not reached the total monthly salary limit!");
+  }
+}
+
 function displayEmployees() {
   console.log("In displayEmployees");
   let el = $(".employeeTable");
@@ -31,7 +41,7 @@ function displayEmployees() {
       <td>${employeeArray[i].lastName}</td>
       <td>${employeeArray[i].id}</td>
       <td>${employeeArray[i].title}</td>
-      <td>${employeeArray[i].annualSalary}</td>
+      <td>$${employeeArray[i].annualSalary}</td>
       <td><button class="removeBtn">Delete</button></td></tr>`
     );
   }
@@ -46,7 +56,7 @@ function onReady() {
 }
 
 function onRemove() {
-  $(this).parent().remove();
+  $(this).parents("tr").remove();
 }
 
 function totalMonthlySalary() {
@@ -57,7 +67,5 @@ function totalMonthlySalary() {
   let el = $("#totalMonthly");
   el.empty();
   el.append(totalSalary);
-  if (el > 20000) {
-    //Addclass
-  }
+  checkMonthlyTotal();
 }
